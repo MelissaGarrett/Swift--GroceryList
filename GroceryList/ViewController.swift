@@ -20,6 +20,9 @@ class ViewController: UITableViewController {
         navigationItem.title = "GROCERY LIST"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewStore))
+        
+        // To remove empty cells from table
+        tableView.tableFooterView = UIView()
     }
 
     @objc func addNewStore() {
@@ -62,12 +65,28 @@ class ViewController: UITableViewController {
             ac.actions[0].isEnabled = true
         }
     }
-    
-    //let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
-    //gestureRecognizer.cancelTouchesInView = false        tableView.addGestureRecognizer(gestureRecognizer)
-    
-    func saveNewStore(store: String) {
         
+    func saveNewStore(store: String) {
+        stores.append(store)
+        
+        // save data to disk
+        
+        tableView.reloadData()
+    }
+    
+    //MARK: Table View Data Source
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        stores.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath)
+        
+        cell.textLabel?.text = stores[indexPath.row]
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 30)
+        
+        return cell
     }
 }
 
