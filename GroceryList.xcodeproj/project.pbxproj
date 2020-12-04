@@ -13,6 +13,7 @@
 		012E62DB2550F6A700548179 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012E62D92550F6A700548179 /* Main.storyboard */; };
 		012E62DD2550F6A900548179 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 012E62DC2550F6A900548179 /* Assets.xcassets */; };
 		012E62E02550F6A900548179 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 012E62DE2550F6A900548179 /* LaunchScreen.storyboard */; };
+		0155CA6E2579E09F00522E6A /* StoreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0155CA6D2579E09F00522E6A /* StoreModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		012E62DC2550F6A900548179 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		012E62DF2550F6A900548179 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		012E62E12550F6A900548179 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0155CA6D2579E09F00522E6A /* StoreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				012E62D32550F6A700548179 /* AppDelegate.swift */,
 				012E62D52550F6A700548179 /* SceneDelegate.swift */,
 				012E62D72550F6A700548179 /* ViewController.swift */,
+				0155CA6D2579E09F00522E6A /* StoreModel.swift */,
 				012E62D92550F6A700548179 /* Main.storyboard */,
 				012E62DC2550F6A900548179 /* Assets.xcassets */,
 				012E62DE2550F6A900548179 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				012E62D82550F6A700548179 /* ViewController.swift in Sources */,
+				0155CA6E2579E09F00522E6A /* StoreModel.swift in Sources */,
 				012E62D42550F6A700548179 /* AppDelegate.swift in Sources */,
 				012E62D62550F6A700548179 /* SceneDelegate.swift in Sources */,
 			);

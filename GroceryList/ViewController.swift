@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    var stores = [String]()
+    var stores = [StoreModel]()
     
     var ac = UIAlertController()
     
@@ -42,7 +42,7 @@ class ViewController: UITableViewController {
             
             
             if storeTextField.hasText {
-                self.saveNewStore(store: storeTextField.text!)
+                self.saveNewStore(storeName: storeTextField.text!)
             }
         }
         saveAction.isEnabled = false
@@ -66,7 +66,8 @@ class ViewController: UITableViewController {
         }
     }
         
-    func saveNewStore(store: String) {
+    func saveNewStore(storeName: String) {
+        let store = StoreModel(storeName: storeName)
         stores.append(store)
         
         // save data to disk
@@ -83,7 +84,7 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoreCell", for: indexPath)
         
-        cell.textLabel?.text = stores[indexPath.row]
+        cell.textLabel?.text = stores[indexPath.row].storeName
         cell.textLabel?.font = UIFont.systemFont(ofSize: 30)
         
         return cell
