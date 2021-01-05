@@ -7,11 +7,14 @@
 
 import Foundation
 
-class StoreModel {
+struct StoreModel {
     var storeName: String
-    var totalItemCount = 0
+    var categories: CategoriesModel
+    var totalItemCount: Int
     
     init(storeName: String) {
         self.storeName = storeName
+        self.categories = CategoriesModel()
+        self.totalItemCount = 0
     }
 }
