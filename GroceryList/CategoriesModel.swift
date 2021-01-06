@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CategoriesModel {
+class CategoriesModel : Codable {
     var items = [
         "Produce"         : [""],
         "Meats"           : [""],

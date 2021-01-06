@@ -21,6 +21,8 @@ class ViewController: UITableViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addNewStore))
         
+        retrieveDataFromStorage()
+        
         // To remove empty cells from table
         tableView.tableFooterView = UIView()
     }
@@ -32,7 +34,6 @@ class ViewController: UITableViewController {
             textField.placeholder = "Enter store name"
             textField.becomeFirstResponder()
             textField.autocapitalizationType = .words
-            
             
             textField.addTarget(self, action: #selector(self.textFieldDidChange(textField:)), for: .editingChanged)
         })
@@ -68,11 +69,48 @@ class ViewController: UITableViewController {
         
     func saveNewStore(storeName: String) {
         let store = StoreModel(storeName: storeName)
+        
         stores.append(store)
         
-        // save data to disk
+        saveDataToStorage()
         
         tableView.reloadData()
+    }
+    
+    func saveDataToStorage() {
+        do {
+            let defaults = UserDefaults.standard
+            let jsonEncoder = JSONEncoder()
+            let savedData = try jsonEncoder.encode(stores)
+            
+            defaults.set(savedData, forKey: "stores")
+        } catch {
+            let ac = UIAlertController(title: "Error", message: "Could not save data.", preferredStyle: .alert)
+            let action = UIAlertAction(title: "OK", style: .default)
+            
+            ac.addAction(action)
+            
+            present(ac, animated: true)
+        }
+    }
+    
+    func retrieveDataFromStorage() {
+        let defaults = UserDefaults.standard
+        
+        if let savedData = defaults.object(forKey: "stores") as? Data {
+            let jsonDecoder = JSONDecoder()
+            
+            do {
+                stores = try jsonDecoder.decode([StoreModel].self, from: savedData)
+            } catch {
+                let ac = UIAlertController(title: "Error", message: "Could not retrieve data.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default)
+                
+                ac.addAction(action)
+                
+                present(ac, animated: true)
+            }
+        }
     }
     
     //MARK: Table View Data Source

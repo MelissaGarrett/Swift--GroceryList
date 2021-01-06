@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StoreModel {
+class StoreModel : Codable {
     var storeName: String
     var categories: CategoriesModel
     var totalItemCount: Int
