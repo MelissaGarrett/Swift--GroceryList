@@ -71,7 +71,7 @@ class ViewController: UITableViewController {
         let store = StoreModel(storeName: storeName)
         
         stores.append(store)
-        
+
         saveDataToStorage()
         
         tableView.reloadData()
@@ -125,6 +125,10 @@ class ViewController: UITableViewController {
         cell.textLabel?.text = stores[indexPath.row].storeName
         cell.textLabel?.font = UIFont.systemFont(ofSize: 30)
         
+        if stores[indexPath.row].totalItemCount > 0 {
+            cell.textLabel?.textColor = UIColor.green
+        }
+            
         return cell
     }
     
