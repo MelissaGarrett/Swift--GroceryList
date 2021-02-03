@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0114F4D125CA58A700FC0CCA /* CategoriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0114F4D025CA58A700FC0CCA /* CategoriesTableViewController.swift */; };
 		012E62D42550F6A700548179 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012E62D32550F6A700548179 /* AppDelegate.swift */; };
 		012E62D62550F6A700548179 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012E62D52550F6A700548179 /* SceneDelegate.swift */; };
 		012E62D82550F6A700548179 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012E62D72550F6A700548179 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0114F4D025CA58A700FC0CCA /* CategoriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableViewController.swift; sourceTree = "<group>"; };
 		012E62D02550F6A700548179 /* GroceryList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		012E62D32550F6A700548179 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		012E62D52550F6A700548179 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				012E62D32550F6A700548179 /* AppDelegate.swift */,
 				012E62D52550F6A700548179 /* SceneDelegate.swift */,
 				012E62D72550F6A700548179 /* ViewController.swift */,
+				0114F4D025CA58A700FC0CCA /* CategoriesTableViewController.swift */,
 				0155CA6D2579E09F00522E6A /* StoreModel.swift */,
 				0133B88825A411F6000131EE /* CategoriesModel.swift */,
 				012E62D92550F6A700548179 /* Main.storyboard */,
@@ -146,6 +149,7 @@
 				0133B88925A411F6000131EE /* CategoriesModel.swift in Sources */,
 				012E62D82550F6A700548179 /* ViewController.swift in Sources */,
 				0155CA6E2579E09F00522E6A /* StoreModel.swift in Sources */,
+				0114F4D125CA58A700FC0CCA /* CategoriesTableViewController.swift in Sources */,
 				012E62D42550F6A700548179 /* AppDelegate.swift in Sources */,
 				012E62D62550F6A700548179 /* SceneDelegate.swift in Sources */,
 			);

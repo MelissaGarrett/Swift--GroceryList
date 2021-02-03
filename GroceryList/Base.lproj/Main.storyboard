@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,6 +24,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="vro-YM-Pmp" kind="show" identifier="ShowCategories" id="YUS-sH-1Y3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -35,7 +39,36 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bPX-w8-618" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="621.73913043478262" y="85.714285714285708"/>
+            <point key="canvasLocation" x="370" y="86"/>
+        </scene>
+        <!--Categories Table View Controller-->
+        <scene sceneID="zhz-Ro-ZCJ">
+            <objects>
+                <tableViewController id="vro-YM-Pmp" customClass="CategoriesTableViewController" customModule="GroceryList" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Onb-Hc-usJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="c2a-5N-mxw">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="c2a-5N-mxw" id="J5T-Yo-EpG">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vro-YM-Pmp" id="PUe-x8-dQk"/>
+                            <outlet property="delegate" destination="vro-YM-Pmp" id="vDP-dh-wcO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="PIu-tR-wZO"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ICG-Ss-0Vx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1012" y="86"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f3i-Ml-Qtl">
@@ -56,4 +89,9 @@
             <point key="canvasLocation" x="-288.40579710144931" y="85.714285714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

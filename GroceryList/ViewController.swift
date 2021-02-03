@@ -146,6 +146,18 @@ class ViewController: UITableViewController {
             tableView.reloadData()
         }
     }
+    
+    // Pass StoreName to 2nd VC
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowCategories" {
+            let controller = segue.destination as! CategoriesTableViewController
+            let cell = sender as! UITableViewCell
+            
+            if let indexPath = tableView.indexPath(for: cell) {
+                controller.storeName = stores[indexPath.row].storeName
+            }
+        }
+    }
 }
 
 
